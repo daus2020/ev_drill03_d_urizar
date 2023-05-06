@@ -18,9 +18,15 @@ indexed_by_prof = {}
 for profesion in profesiones:
     indexed_by_prof[profesion] = [k for k in todos.keys() if todos[k] == profesion]
 
-magos = indexed_by_prof['mago']
-cientificos = indexed_by_prof['cientifico']
-otros = indexed_by_prof['otros']
+# creating lists by prof.
+for item in indexed_by_prof.items():
+    if item[0] == 'mago':
+        magos = item[1]
+    elif item[0] == 'cientifico':
+        cientificos = item[1]
+    else:
+        otros = item[1]
+
 
 def hacer_grandioso(dict):
     just_mago = [item[1] for item in dict.items() if item[0] == "mago"]  # [['Harry Houdini', 'David Blaine', 'Teller']]
